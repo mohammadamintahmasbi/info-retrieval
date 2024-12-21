@@ -14,18 +14,21 @@ import java.io.IOException;
 public class Indexer {
     private IndexWriter writer;
 
-    public Indexer() throws IOException { //Constructor of Indexer class
+    // Constructor of Indexer class
+    public Indexer() throws IOException {
         Directory index = new RAMDirectory();
         StandardAnalyzer analyzer = new StandardAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig();
         writer = new IndexWriter(index, config);
     }
+    // To add Documents
     public void addDocument(String name, String address) throws IOException{
         Document document = new Document();
         document.add(new TextField("name", name, TextField.Store.YES));
         document.add(new TextField("address", address, TextField.Store.YES));
         writer.addDocument(document);
     }
+    // Closing the writer
     public void close() throws IOException {
         this.writer.close();
     }
