@@ -40,6 +40,8 @@ public class Indexer {
             indexer.addDocument("Nicola Tesla", "Serbia");
             indexer.addDocument("Kurt Godel", "Switzerland");
             indexer.addDocument("Bo Ali Sina", "Hamedan");
+            indexer.addDocument("Cristiano Ronaldo", "Portugal");
+            indexer.addDocument("Ronaldo Nazario", "Brazil");
             indexer.close();
         }catch (IOException e){
             System.out.print(e.getMessage());
