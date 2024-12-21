@@ -15,8 +15,7 @@ public class Indexer {
     private IndexWriter writer;
 
     // Constructor of Indexer class
-    public Indexer() throws IOException {
-        Directory index = new RAMDirectory();
+    public Indexer(Directory index) throws IOException {
         StandardAnalyzer analyzer = new StandardAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig();
         writer = new IndexWriter(index, config);
@@ -31,21 +30,6 @@ public class Indexer {
     // Closing the writer
     public void close() throws IOException {
         this.writer.close();
-    }
-
-    public static void main(String[] args) {
-        try {
-            Indexer indexer = new Indexer();
-            indexer.addDocument("Kharazmi", "Marve");
-            indexer.addDocument("Nicola Tesla", "Serbia");
-            indexer.addDocument("Kurt Godel", "Switzerland");
-            indexer.addDocument("Bo Ali Sina", "Hamedan");
-            indexer.addDocument("Cristiano Ronaldo", "Portugal");
-            indexer.addDocument("Ronaldo Nazario", "Brazil");
-            indexer.close();
-        }catch (IOException e){
-            System.out.print(e.getMessage());
-        }
     }
 
 }

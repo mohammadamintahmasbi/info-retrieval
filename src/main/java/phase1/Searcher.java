@@ -33,7 +33,7 @@ public class Searcher {
     public static void main(String[] args) {
         try {
             Directory index = new RAMDirectory();
-            Indexer indexer = new Indexer();
+            Indexer indexer = new Indexer(index);
             indexer.addDocument("Kharazmi", "Marve");
             indexer.addDocument("Nicola Tesla", "Serbia");
             indexer.addDocument("Kurt Godel", "Switzerland");
@@ -42,7 +42,7 @@ public class Searcher {
             indexer.addDocument("Ronaldo Nazario", "Brazil");
             indexer.close();
             Searcher searcher1 = new Searcher(index);
-            searcher1.search("Ronaldo Nazario");
+            searcher1.search("Nicola");
         }catch (Exception e){
             System.out.print(e.getMessage());
         }
