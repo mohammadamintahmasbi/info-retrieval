@@ -1,2 +1,2 @@
 # info-retrival project
-a simple search engine with java
+A simple data retrieval system using the Apache Lucene library.
